@@ -19,7 +19,6 @@
             justify-content: space-between;
             display: flex;
             align-items: center;
-            height: 64px;
             float: right;
             width: 50%;
             font-size: 24px;
@@ -41,7 +40,7 @@
 
         .nav-items {
             background-color: blueviolet;
-            height: 100%;
+            height: 64px;
             width: 100%;
             display: flex;
             justify-content: space-around;
@@ -63,18 +62,19 @@
             nav {
                 flex-direction: column;
                 align-items: flex-end;
+                justify-content: flex-start;
                 height: 100vh;
             }
 
-            .nav-items {  
-                overflow: hidden;         
+            .nav-items {
+                height: initial;
+                overflow: hidden;
                 width: 0;
                 opacity: 0;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 gap: 24px;
-                height: 100%;
             }
 
             label {
@@ -82,11 +82,13 @@
                 justify-content: flex-end;
             }
 
-            input:checked ~ .nav-items {
+            input:checked~.nav-items {
+                overflow: visible;
                 animation-name: change-width;
                 animation-duration: 0.3s;
                 animation-fill-mode: forwards;
             }
+
             @keyframes change-width {
                 to {
                     opacity: 1;
