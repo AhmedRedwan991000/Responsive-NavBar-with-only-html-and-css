@@ -62,18 +62,19 @@
         @media (max-width: 880px) {
             nav {
                 flex-direction: column;
+                align-items: flex-end;
                 height: 100vh;
             }
 
-            .nav-items {
-                position: relative;
-                left: 100%;
+            .nav-items {  
+                overflow: hidden;         
+                width: 0;
+                opacity: 0;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 gap: 24px;
                 height: 100%;
-                transition: 0.3s;
             }
 
             label {
@@ -82,7 +83,15 @@
             }
 
             input:checked ~ .nav-items {
-                left: 0;
+                animation-name: change-width;
+                animation-duration: 0.3s;
+                animation-fill-mode: forwards;
+            }
+            @keyframes change-width {
+                to {
+                    opacity: 1;
+                    width: 100%;
+                }
             }
         }
 
