@@ -63,11 +63,12 @@
                 flex-direction: column;
                 align-items: flex-end;
                 justify-content: flex-start;
-                height: 100vh;
+                height: auto;
             }
 
             .nav-items {
-                height: initial;
+                margin-top: 64px;
+                height: auto;
                 overflow: hidden;
                 width: 0;
                 opacity: 0;
@@ -78,12 +79,14 @@
             }
 
             label {
+                z-index: 999;
+                position: fixed;
                 display: flex;
                 justify-content: flex-end;
             }
 
             input:checked~.nav-items {
-                overflow: visible;
+                overflow: scroll;
                 animation-name: change-width;
                 animation-duration: 0.3s;
                 animation-fill-mode: forwards;
@@ -119,3 +122,4 @@
 </body>
 
 </html>
+
